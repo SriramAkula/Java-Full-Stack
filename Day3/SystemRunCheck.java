@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class SystemRunCheck 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter true if isMid night else false:  ");
+		boolean isMidnight = sc.nextBoolean();
+		System.out.print("Enter server load High or Low:  ");
+		String serverLoad =sc.next();
+		System.out.print("Enter true if is under maintainance false:  ");
+		boolean isInMaintainance =sc.nextBoolean();
+		boolean isServerRunning = isInMaintainance || (isMidnight && serverLoad=="Low");
+		System.out.println(isServerRunning ? "Server Running" : "Server Stopped");
+	}
+}

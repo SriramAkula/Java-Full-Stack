@@ -1,0 +1,10 @@
+class SendAlert 
+{
+	public static void main(String[] args) 
+	{
+		int loginAttempts = 6;
+		boolean isLocked = true;
+		boolean shouldSendAlert = !isLocked && (loginAttempts > 3);
+		System.out.println(shouldSendAlert ? "Alert Sent" : "Alert Not Sent");
+	}
+}
