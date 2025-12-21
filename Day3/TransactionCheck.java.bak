@@ -1,0 +1,12 @@
+class TransatctionCheck 
+{
+	public static void main(String[] args) 
+	{
+		double balance = 6789;
+		boolean isActiveAcc = true;
+		boolean isFrozenAcc = false;
+		double reqAmt=600;
+		boolean isTransactionPermitted = (!isFrozenAcc && isActiveAcc && (balance > reqAmt);
+		System.out.println(isTransactionPermitted ? "Transaction Allowed" : "Transaction Not Allowed");
+	}
+}
