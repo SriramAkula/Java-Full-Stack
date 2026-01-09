@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Arrays;
+class LinearSearch
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter size: ");
+		int size=sc.nextInt();
+		int arr[]=new int[size];
+		for(int i=0;i<arr.length;i++){
+			System.out.print("Element "+(i+1)+" : ");
+			arr[i]=sc.nextInt();
+		}
+		System.out.print("Enter element to find: ");
+		int ele=sc.nextInt();
+		int ind=linSearch(arr,ele);
+		if(ind==-1){
+			System.out.print("Element not found");
+		}else{
+			System.out.print("Element found at "+ind);
+		}
+		
+	}
+	public static int linSearch(int arr[],int ele){
+		for(int i=0;i<arr.length;i++){
+			if(arr[i]==ele){
+				return i;
+			}
+		}
+		return -1;
+	}
+}
