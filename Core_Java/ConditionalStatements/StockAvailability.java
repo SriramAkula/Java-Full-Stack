@@ -1,3 +1,5 @@
+package ConditionalStatements;
+
 class StockAvailability 
 {
 	public static void main(String[] args) 
@@ -7,6 +9,3 @@ class StockAvailability
 	}
 }
 
-//Q. Which relational operator will you use to validate the stock, and why is it safer than checking for non-zero stock?
-
-//Ans. 

@@ -12,7 +12,7 @@ class EmployeeCheck
 		boolean isContract =sc.nextBoolean();
 		System.out.print("Enter true if has Manager Approval else false:  ");
 		boolean haveApproval =sc.nextBoolean();
-		boolean res = haveId && (isPermanant || (isContract && haveApproval));
+		boolean res = haveId && (isPermenant || (isContract && haveApproval));
 		System.out.println(res);
 	}
 }

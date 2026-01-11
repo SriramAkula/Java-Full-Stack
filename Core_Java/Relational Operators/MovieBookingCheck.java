@@ -5,7 +5,7 @@ class MovieBookingCheck
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter no of seats available:  ");
-		int availableSeats = nextInt();
+		int availableSeats = sc.nextInt();
 		System.out.print("Enter true if has membership else false:  ");
 		boolean haveMembership =sc.nextBoolean();
 		System.out.print("Enter true if has promo code else false:  ");

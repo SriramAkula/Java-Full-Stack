@@ -10,7 +10,7 @@ class ServerStabilityCheck
 		double memoryUsage =sc.nextDouble();
 		System.out.print("Enter true if under maintainance else false:  ");
 		boolean isUnderMaintenance =sc.nextBoolean();
-		String res = isUnderMaintainance ? "Server Under Maintainance" : (cpuUsage > 85 || memoryUsage >90) ? "Server Unstable" : "Server Stable";
+		String res = isUnderMaintenance ? "Server Under Maintainance" : (cpuUsage > 85 || memoryUsage >90) ? "Server Unstable" : "Server Stable";
 		System.out.println(res);
 	}
 }

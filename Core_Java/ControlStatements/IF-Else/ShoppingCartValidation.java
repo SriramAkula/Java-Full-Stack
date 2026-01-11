@@ -10,10 +10,10 @@ class ShoppingCartValidation
 		if(cartValue>0){
 			System.out.print("Please Enter Delivery Address pincode: ");
 			int pinCode=sc.nextInt();
-			if(pinCode==123456 || pincode==534301){
+			if(pinCode==123456 || pinCode==534301){
 				System.out.println("Delivery Address pincode not delivarable");
 			}else{
-				System.out.println("Your checkout is allowed to "+deliveryAdd);
+				System.out.println("Your checkout is allowed to "+pinCode);
 			}
 			
 		}else{
