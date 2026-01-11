@@ -12,7 +12,7 @@ class TransatctionCheck
 		boolean isFrozenAcc =sc.nextBoolean();
 		System.out.print("Enter req amt:  ");
 		double reqAmt=sc.nextDouble();
-		boolean isTransactionPermitted = (!isFrozenAcc && isActiveAcc && (balance > reqAmt);
+		boolean isTransactionPermitted = (!isFrozenAcc && isActiveAcc )&& (balance > reqAmt);
 		System.out.println(isTransactionPermitted ? "Transaction Allowed" : "Transaction Not Allowed");
 	}
 }
