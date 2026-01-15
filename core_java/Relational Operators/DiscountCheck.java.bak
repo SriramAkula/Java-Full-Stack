@@ -1,0 +1,10 @@
+class DiscountCheck
+{
+	public static void main(String[] args) 
+	{
+		boolean isPremUser = true;
+		double cartValue = 4700.70;
+		boolean res= isPremUser || cartValue>5000;
+		System.out.println(res ? "Discount Available" : "No Discount");
+	}
+}

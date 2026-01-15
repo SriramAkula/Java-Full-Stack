@@ -15,7 +15,7 @@ class HappyNumber
 				c++;
 			}
 		}
-		System.out.println("\n"+c);
+		System.out.println(c);
 
 	}
 	public static boolean isHappyNum(int n){
