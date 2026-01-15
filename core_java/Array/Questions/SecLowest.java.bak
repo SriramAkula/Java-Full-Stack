@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+class SecLowest 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter size: ");
+		int size=sc.nextInt();
+		int arr[]=new int[size];
+		for(int i=0;i<arr.length;i++){
+			System.out.print("Element "+(i+1)+" : ");
+			arr[i]=sc.nextInt();
+		}
+		int mini2=secLargest(arr);
+		System.out.print(mini2);
+	}
+	public static int secLargest(int arr[]){
+		int mini=arr[0];
+		int mini2=Integer.MAX_VALUE;
+		for(int i=0;i<arr.length;i++){
+			if(min>=arr[i]){
+				mini2=mini;
+				mini=arr[i];
+			}
+			else if(arr[i]<mini2 && arr[i]!=mini){
+				mini2=arr[i];
+			}
+		}
+		return mini2;
+	}
+}

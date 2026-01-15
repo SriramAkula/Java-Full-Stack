@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class HappyNumber 
+class DisariamNumber 
 {
 	public static void main(String[] args) 
 	{
@@ -10,7 +10,7 @@ class HappyNumber
 		int b=sc.nextInt();
 		int c=0;
 		for(int i=a;i<=b;i++){
-			if(isHappyNum(i)){
+			if(isDisariamNum(i)){
 				System.out.print(i+" ");
 				c++;
 			}
@@ -18,25 +18,28 @@ class HappyNumber
 		System.out.println("\n"+c);
 
 	}
-	public static boolean isHappyNum(int n){
-		while(n>9){
-			int temp=n;
-			int res=0;
-			while(temp>0){
-				int ntemp=temp%10;
-				res+=(ntemp*ntemp);
-				temp/=10;
-			}
-			
-			
-			n=res;
-			
+	public static boolean isDisariamNum(int n){
+		int temp=n;
+		int len=0;
+		double res=0;
+		while(temp>0){
+			len++;
+			temp/=10;
 		}
-		if(n==1 || n==7){
+		temp=n;
+		while(temp>0){
+			int ntemp=temp%10;
+			int d=ntemp;
+			for(int i=len;i>0;i--){
+				d*=ntemp;
+			}
+			res=res+d;
+			temp/=10;
+			len--;
+		}
+		if(res==n){
 			return true;
 		}
-		
 		return false;
-		
 	}
 }
