@@ -1,20 +1,64 @@
+import java.util.Scanner;
 class M1 
 {
+	
+	static int a = 10;
+	
 	public static void main(String[] args) 
 	{
-		m1(m3(),m2(100),200);
+		addition(); //Caller method
+		/*subtraction(); //Caller method
+		multiplication(); //Caller method*/
+		System.out.println(a);
 	}
-	public static void m1(int y,int x,int a){
-		System.out.println("m1 -> "+a);
-	}
-	public static int m2(int a){
-		System.out.println("m2 -> "+a);
-		return a;
+	public static void addition(){ //Called Method
 		
-	}
-	public static int m3(){
-		System.out.println("m3 method ");
-		return 10;
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("Enter the num1: ");
+		int a = sc.nextInt();
+		
+		System.out.print("Enter the num1: ");
+		int b = sc.nextInt();
+		
+		int add = a + b;
+		System.out.println("Addtion: " + add);
+		
+		subtraction(); // Method Chaining
+		
+		sc.close();
+	}
+	public static void subtraction(){ // Called method
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the num1: ");
+		int a = sc.nextInt();
+		
+		System.out.print("Enter the num1: ");
+		int b = sc.nextInt();
+		
+		int sub = a - b;
+		System.out.println("Subtraction: " + sub);
+		
+		multiplication(); //Method Chaining.
+		
+		sc.close();
+	}
+	public static void multiplication(){ //Called Method
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the num1: ");
+		int a = sc.nextInt();
+		
+		System.out.print("Enter the num1: ");
+		int b = sc.nextInt();
+		
+		int mul = a * b;
+		System.out.println("Multiplication: " + mul);
+		
+		sc.close();
 	}
 }
+
