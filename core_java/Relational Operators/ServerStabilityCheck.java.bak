@@ -1,0 +1,11 @@
+class ServerStabilityCheck 
+{
+	public static void main(String[] args) 
+	{
+		double cpuUsage = 65;
+		double memoryUsage = 96.6;
+		boolean isUnderMaintenance = false;
+		String res = isUnderMaintainance ? "Server Under Maintainance" : (cpuUsage > 85 || memoryUsage >90) ? "Server Unstable" : "Server Stable";
+		System.out.println(res);
+	}
+}

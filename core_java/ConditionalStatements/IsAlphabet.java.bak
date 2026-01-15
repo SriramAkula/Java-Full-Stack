@@ -1,0 +1,11 @@
+import java.util.Scanner;
+class IsAlphabet 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a char: ");
+		char ch=sc.next().CharAt(0);
+		System.out.println(((ch>='A' || ch>='a') && (ch<='Z' || ch<='z')) ? "Alphabet" : "Not Alphabet");
+	}
+}

@@ -1,0 +1,13 @@
+import java.util.Scanner;
+class FeatureCheck
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter true if user has Logged in  ");
+		boolean isLoggedIn = false;
+		boolean hasAcceptedConditions = true;
+		boolean isFeatureEnabled = isLoggedIn && hasAcceptedConditions;
+		System.out.println("Hello World!");
+	}
+}
