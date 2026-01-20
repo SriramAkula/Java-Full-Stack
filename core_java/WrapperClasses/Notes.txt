@@ -1,0 +1,39 @@
+Wrapper Classes = Objects for primitives.
+
+They provide:
+
+Utility methods
+
+Support for null
+
+Needed for collections, generics, frameworks
+
+Methods
+
+valueOf() → String → wrapper
+
+parseXxx() → String → primitive
+
+xxxValue() → Wrapper → primitive
+
+compare(), equals(), toString(), MIN/MAX
+
+Autoboxing/Unboxing
+
+Primitive ↔ Wrapper automatically
+
+Drawbacks:
+
+Slow
+
+NPE risk
+
+Memory overhead
+
+Use
+
+Collections, APIs, frameworks, null handling
+
+Avoid
+
+Performance-sensitive code
