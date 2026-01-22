@@ -23,7 +23,7 @@ public class Main {
         System.out.println(s.lastIndexOf("r"));
         System.out.println(s.equals("Sriram"));
         System.out.println(s.equalsIgnoreCase("sriram"));
-        System.out.println(("sri").compareTo("asi")); 
+        System.out.println(("sri").compareTo("Sqs")); 
         System.out.println(("sri").compareToIgnoreCase("Sqs")); 
         System.out.println(s.toLowerCase());
         System.out.println(s.toUpperCase());
