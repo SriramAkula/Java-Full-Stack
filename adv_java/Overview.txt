@@ -1,0 +1,82 @@
+Roles And Responsibilities  --> Application Development
+
+- End-user requirements (High level)->  Client -> Business requirements - (High level) -> Functional Specifications(Document)
+                client                                      Company                                 Team
+- Functional Specifications - Backbone of a Project - For Domain Knowledge
+- Project Manager provides Functional Specifications for his team.
+
+Functional Specifications
+        - Tester
+        - Developer
+        - Database
+
+Developer should know Functional Specifications and TDD (Technical Design document)
+
+- Managers
+    - Functional Manager    (Domain Knowledge)
+    - Techno Functional Manager (Technical Domain Knowledge)
+
+- Every Developer must contain Domain Knowledge.
+
+Domain - area of business or industry for which a software application is built.
+    ex- Banking domain, Health care domain etc
+
+- IRCTC Application is developed based on 3-Tier Architecture.
+
+
+                                            ------------------Computer----------------
+                                            |                                         |
+                                         Hardware                                  Software
+                                                                |                                     |
+                                                        Application Software                  System Software
+                                                |                               |                     (OS)
+                                             Language                    Application             |               |
+                       |             |              |                    (Ms Office)           Single User     Multiple User(server-client relationship)
+                     High         Middle         Low(0-1)                 IRCTC                 (MS-DOS)            (Windows 2000)
+                       C          Assembly                                                            |
+                       C++           C                                                           Windows 3.11
+                    Python                                                                            |
+                      VC++                                                                        Windows 95
+                      Java
+
+
+MS-DOS -> Microsoft Disc Operationg System. (Prompt Based) -TUI
+No HardDisk only Floppy Drive (1.44MB) with Ms-Dos
+
+Windows 3.11 -> Not a direct OS. Uses Ms-Dos. (DOS based OS)  - GUI
+Requires 40MB hard drive.
+
+Windows 95 -> It is a Direct Os. Uses Small part as Ms-Dos - GUI
+Requires 500MB hard disk.
+
+
+                OS
+            |       |
+           TUI     GUI
+ TUI - Textual User Interface
+ GUI - Graphical User Interface
+
+Language Vs Application
+If we know Languages we can decelop many Applications.
+ First High level Language - Fortan (Scientific)
+ First Business Language - Cobalt
+ Ms Office Application developed by VC++ developers
+
+ Java (Secure) - Open source
+ .Net (Quick development + costly) - Paid
+
+Important For Application Development Purpose
+1. Exception Handling - Inbuilt Mechanism of Java
+2. Collection Framework
+3. Multi Threading (Interview Purpose) - Inbuilt Mechanism of Java
+4. Static
+5. Final
+6. Interfaces
+7. Abstract classes
+8. String, StringBuilder
+9. Comparable, Comparator
+10. Lambda
+11. StreamAPIs
+12. Date and Time
+13. Layer wise Architecture
+14. DAO (Design Patterns)

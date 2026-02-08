@@ -1,0 +1,29 @@
+package com.javafullstack.core.controlstatements.if-else;
+
+import java.util.Scanner;
+class BankAccountStatus 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+
+		double minBalance = 4000;
+		int maxLimit=5;
+		System.out.print("Enter Acc balance: ");
+		double accBalance = sc.nextDouble();
+		
+		System.out.print("Enter No of Transactions: ");
+		int noOfTransactions = sc.nextInt();
+		
+		if((accBalance >= minBalance) && (noOfTransactions <= maxLimit)){
+			System.out.println("Active");
+		}else if(noOfTransactions > maxLimit){
+			System.out.println("Your acc is Frozen and Flagged");
+		}else{
+			System.out.println("Low Balance");
+		}
+		
+
+	}
+}

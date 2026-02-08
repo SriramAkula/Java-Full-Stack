@@ -1,0 +1,20 @@
+package com.javafullstack.core.typeconversions;
+
+import java.util.Scanner;
+
+class TypeConversionOne 
+{
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextByte();
+		
+		byte b1 = (byte) sc.nextInt();
+		
+		System.out.println(a);
+		System.out.println(b1);
+		
+	}
+}

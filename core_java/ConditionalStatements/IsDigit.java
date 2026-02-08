@@ -1,8 +1,0 @@
-class IsDigit
-{
-	public static void main(String[] args) 
-	{
-		char ch='6';
-		System.out.println((ch>='0' && ch<='9') ? "Digit" : "Not Digit");
-	}
-}

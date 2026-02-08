@@ -1,0 +1,22 @@
+package com.javafullstack.core.methods.qusetions;
+
+import java.util.Scanner;
+class LoginCheck
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Username: ");
+		String userName=sc.next();
+		System.out.print("Password: ");
+		String password=sc.next();
+		String status=checkLogin(userName,password);
+		System.out.println(status);
+	}
+	public static String checkLogin(String userName,String password){
+		if(userName.equals("sriram") && password.equals("1234")){
+			return "202 Login Successful";
+		}
+		return "404 User not found";
+	}
+}

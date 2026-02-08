@@ -1,0 +1,20 @@
+package com.javafullstack.core.controlstatements.loopingstatements;
+
+
+import java.util.Scanner;
+class  AlphabetReading
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the number for alphabet: ");
+		
+		int num = sc.nextInt();
+		int start = 65;
+		for(int i=1;i<num;i++){
+			start++;
+		}
+		System.out.print((char)start);
+	}
+}
