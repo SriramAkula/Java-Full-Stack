@@ -1,0 +1,15 @@
+package com.capg.assessment.dao;
+
+import com.capg.assessment.entity.AccountBean;
+
+public class AccountDao {
+
+	
+	
+	public void createAccount(AccountBean bean) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

@@ -1,0 +1,19 @@
+package com.capg.assessment.db;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.classic.Session;
+
+public class AccountDB {
+	
+	
+	SessionFactory factory =  new Configuration().configure().buildSessionFactory();
+
+	public Session getSession() {
+		
+		return factory.openSession();
+		
+		
+	}
+	
+}

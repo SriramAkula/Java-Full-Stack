@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.ram.corejava.layers&apos; to &apos;com.capg.layers&apos;&#x0D;&#x0A;- Original project: &apos;LA01-BookLayers-JDBC_Oracle&apos;&#x0D;&#x0A;- Original element: &apos;LA01-BookLayers-JDBC_Oracle/src/com.ram.corejava.layers&apos;&#x0D;&#x0A;- Renamed element: &apos;LA01-BookLayers-JDBC_Oracle/src/com.capg.layers&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.ram.corejava.layers&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.ram.corejava.layers" name="com.capg.layers" qualified="false" references="true" stamp="1770899080267" textual="false" version="1.0"/>
+</session>

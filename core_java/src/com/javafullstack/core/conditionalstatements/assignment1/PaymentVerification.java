@@ -9,9 +9,9 @@ class PaymentVerification
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Enter Order Amount: ");
-		Double orderAmount = sc.nextDouble;
+		Double orderAmount = sc.nextDouble();
 		
-		System.out.print("Enter Payed Amount: "
+		System.out.print("Enter Payed Amount: ");
 		Double payedAmount = 150.50;
 		
 		String res = (orderAmount == payedAmount) ? "Valid Payment!" : "Not Payed Exact Amount!";

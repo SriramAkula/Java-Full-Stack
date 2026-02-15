@@ -1,0 +1,12 @@
+package com.capg.assessment.db;
+
+import org.hibernate.cfg.Configuration;
+
+public class AccountDB {
+	
+	
+	
+	Configuration cfg = new Configuration().configure();
+	
+	SessionFactory 
+}

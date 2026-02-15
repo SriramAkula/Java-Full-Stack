@@ -1,4 +1,4 @@
-package com.javafullstack.core.filehandling.projects.OnlineShoppingOrder;
+package com.javafullstack.core.filehandling.projects.onlineshoppingorder;
 
 public class Order extends Customer{
     String orderId;

@@ -1,0 +1,21 @@
+package com.capg.assessment.dao;
+
+import org.hibernate.classic.Session;
+
+import com.capg.assessment.db.AccountDB;
+import com.capg.assessment.entity.AccountBean;
+
+public class AccountDao {
+
+	
+	
+	public void createAccount(AccountBean bean) {
+		Session session= AccountDB.getSession();
+		// TODO Auto-generated method stub
+		
+		
+		
+	}
+	
+	
+}

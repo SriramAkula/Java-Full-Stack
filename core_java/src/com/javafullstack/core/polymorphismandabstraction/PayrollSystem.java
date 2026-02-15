@@ -5,16 +5,16 @@ public class PayrollSystem {
 
     public static void main(String[] args){
 
-        FullTimeEmployee obj1 = new FullTimeEmployee("Alice","IT",50000,10000);
+        FullTimeEmployee11 obj1 = new FullTimeEmployee11("Alice","IT",50000,10000);
 
         System.out.println("FullTimeEmployee Pay: " + obj1.calculatePay());
 
-        PartTimeEmployee obj2 = new PartTimeEmployee("Bob","HR",200,20);
+        PartTimeEmployee11 obj2 = new PartTimeEmployee11("Bob","HR",200,20);
 
         System.out.println("PartTimeEmployee Pay: " + obj2.calculatePay());
     }
 }
-class Employee {
+class Employee11{
 
     private String name;
     private double baseSalary;
@@ -46,11 +46,11 @@ class Employee {
         return baseSalary;
     }
 }
-class FullTimeEmployee extends Employee{
+class FullTimeEmployee11 extends Employee11{
 
     private double bonus;
 
-    FullTimeEmployee(String name,String department,double baseSalary,double bonus){
+    FullTimeEmployee11(String name,String department,double baseSalary,double bonus){
         setName(name);
         setDepartment(department);
         setBaseSalary(baseSalary);
@@ -62,12 +62,12 @@ class FullTimeEmployee extends Employee{
         return getSalary() + bonus;
     }
 }
-class PartTimeEmployee extends Employee{
+class PartTimeEmployee11 extends Employee11{
 
     private double hourlyRate;
     private double hoursWorked;
 
-    PartTimeEmployee(String name,String department,double hourlyRate,double hoursWorked){
+    PartTimeEmployee11(String name,String department,double hourlyRate,double hoursWorked){
         setName(name);
         setDepartment(department);
         this.hourlyRate = hourlyRate;

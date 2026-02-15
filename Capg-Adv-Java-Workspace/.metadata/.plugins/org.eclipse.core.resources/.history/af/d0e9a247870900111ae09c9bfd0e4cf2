@@ -1,0 +1,37 @@
+package com.capg.assessment.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "transactions")
+public class TransactionBean implements Serializable{
+	
+	@Column(name = "acc_no")
+	private int accountNumber;
+	
+	@Column(name = "transaction")
+	private String transaction;
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(String transaction) {
+		this.transaction = transaction;
+	}
+	
+	
+	
+}

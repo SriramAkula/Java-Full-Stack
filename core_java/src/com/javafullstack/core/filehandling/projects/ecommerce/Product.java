@@ -1,4 +1,4 @@
-package com.javafullstack.core.filehandling.projects.e-commerceorderprocessing–outofstock&invalidquantity;
+package com.javafullstack.core.filehandling.projects.ecommerce-commerceorderprocessing–outofstock&invalidquantity;
 
 
 

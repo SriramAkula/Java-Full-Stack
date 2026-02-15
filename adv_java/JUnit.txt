@@ -6,12 +6,16 @@ Testing (2 Types)
         - Tester test the application.
 
     - White Box
-        - Done by Developers
+        - Done by Developers (Unit Testing)
         - Developer test the coding.
 
 Test Case name - Input - Description
 
 Framework - Pre-Built code that which can be used to develop which is pre-tested so that we can use.
+          - There are many Frameworks in java.
+          - It is used to develop applications efficiently reducing lines of code and increasing the application performance.
+
+          
 
 Unit Testing
 --> Testing on Small parts of code. Ex if,switch

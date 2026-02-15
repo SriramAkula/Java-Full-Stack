@@ -5,9 +5,9 @@ class WishListLimit
 	public static void main(String[] args) 
 	{
 		
-		int exitsItems = 101;
+		int existsItems = 101;
 		
-		String res = (exists <= 100) ? "Can Add new items" : "Wish List Limit Exceeds";
+		String res = (existsItems<= 100) ? "Can Add new items" : "Wish List Limit Exceeds";
 		
 		System.out.println(res);
 		

@@ -1,0 +1,19 @@
+package com.capg.hibernate;
+
+import java.io.Serializable;
+
+public class Student implements Serializable{
+	private int sno;
+	private String sname;
+	private String email;
+	private long mobile;
+	
+	public Student(int sno,String sname,String email,long mobile) {
+		this.sno=sno;
+		this.sname=sname;
+		this.email=email;
+		this.mobile=mobile;
+	}
+	
+	
+}

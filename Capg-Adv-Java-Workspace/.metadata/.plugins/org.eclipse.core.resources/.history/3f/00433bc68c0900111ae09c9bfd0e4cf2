@@ -1,0 +1,43 @@
+package com.capg.assessment.dao;
+
+import org.hibernate.Transaction;
+import org.hibernate.classic.Session;
+
+import com.capg.assessment.db.AccountDB;
+import com.capg.assessment.entity.AccountBean;
+
+public class AccountDao {
+
+	
+	
+	public void createAccount(AccountBean bean) {
+		
+		Transaction tx = null;
+		
+		try {
+			
+			Session session= AccountDB.getSession();
+			
+			tx = session.beginTransaction();
+			
+			session.save(bean);
+			
+			tx.commit();
+			
+			
+			
+		}catch(Exception e) {
+			tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+		}
+		
+		
+		
+		
+		
+	}
+	
+	
+}

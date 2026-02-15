@@ -1,0 +1,60 @@
+package com.capg.layers;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class ProductDAO {
+	int i;
+	public int addProduct(ProductBean productBean) {
+		
+		System.out.println("This is ProductDAO");
+		
+		System.out.println("Product ID: "+productBean.getPid());
+		System.out.println("Product Name: "+productBean.getPname());
+		System.out.println("Product Price: "+productBean.getPrice());
+		System.out.println("Product: "+ (productBean.isDiscountable() == true ? "Discountable" : "Not Discountable") );
+		
+		
+		Connection conn=null;
+
+		String driver = "oracle.jdbc.Driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String username = "capgdb";
+		String password = "capgdb";
+		
+		try {
+			
+			Class.forName(driver);
+			
+			try {
+				
+				conn = DriverManager.getConnection(url,username,password);
+				
+				String query = "insert into product values(?,?,?,?)";
+				
+				PreparedStatement pstmt = conn.prepareStatement(query);
+				pstmt.setInt(1, productBean.getPid());
+				pstmt.setString(2, productBean.getPname());
+				pstmt.setDouble(3,productBean.getPrice());
+				pstmt.setBoolean(4,productBean.isDiscountable());
+				
+				i = pstmt.executeUpdate();
+				
+				conn.close();
+				
+			}catch(SQLException e) {
+				e.printStackTrace();;
+			}
+			
+			
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();;
+		}
+		
+		return i;
+	}
+
+}
+ 

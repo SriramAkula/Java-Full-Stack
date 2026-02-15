@@ -1,0 +1,33 @@
+package com.capg.layers;
+
+public class ProductService {
+	
+	
+	boolean discount;
+	
+	public int addProduct(int pid,String pname, double price) {
+		
+		System.out.println("This is ProductService");
+		System.out.println(pid+" "+pname+" "+price);
+		
+		if(price>1000) {
+			discount = true;
+		}else {
+			discount = false;
+		}
+		
+		ProductBean productBean = new ProductBean();
+		
+		productBean.setPid(pid);
+		productBean.setPname(pname);
+		productBean.setPrice(price);
+		productBean.setDiscountable(discount);
+		
+		ProductDAO productDAO = new ProductDAO();
+		
+		int i = productDAO.addProduct(productBean);
+		
+		return i;
+		
+	}
+}

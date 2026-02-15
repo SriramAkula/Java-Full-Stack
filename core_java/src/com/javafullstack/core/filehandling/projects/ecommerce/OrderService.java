@@ -1,6 +1,4 @@
-package com.javafullstack.core.filehandling.projects.e-commerceorderprocessing–outofstock&invalidquantity;
-
-
+import com.javafullstack.core.filehandling.projects.e.Product;
 
 public class OrderService{
     public void placeOrder(Product product,int quantity) throws InvalidQuantityException,OutOfStockException{

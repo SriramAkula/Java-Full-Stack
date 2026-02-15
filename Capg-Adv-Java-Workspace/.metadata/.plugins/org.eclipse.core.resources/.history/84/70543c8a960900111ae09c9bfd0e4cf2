@@ -1,0 +1,30 @@
+package com.capg.assessment.service;
+
+import com.capg.assessment.dao.AccountDao;
+import com.capg.assessment.entity.AccountBean;
+
+public class AccountService {
+	
+	AccountDao accDao = new AccountDao();
+	
+	
+	public void createAccount(long accNo, String name, long mobileNo, double balance) {
+		
+		AccountBean bean = new AccountBean();
+		
+		bean.setAccountNumber(accNo);
+		bean.setCustomerName(name);
+		bean.setMobileNumber(mobileNo);
+		bean.setBalance(balance);
+		
+		accDao.createAccount(bean);
+		
+	}
+	
+
+	public void displayBalance(int accountNumber) {
+		
+		accDao.displayBalance(accountNumber);
+	}
+	
+}

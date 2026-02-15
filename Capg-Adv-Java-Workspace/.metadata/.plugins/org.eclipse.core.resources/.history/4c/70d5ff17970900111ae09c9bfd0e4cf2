@@ -1,0 +1,87 @@
+package com.capg.assessment.dao;
+
+import java.time.LocalDate;
+import java.sql.Date;
+
+import org.hibernate.Transaction;
+import org.hibernate.classic.Session;
+
+import com.capg.assessment.db.AccountDB;
+import com.capg.assessment.entity.AccountBean;
+import com.capg.assessment.entity.TransactionBean;
+
+public class AccountDao {
+
+	
+	
+	public void createAccount(AccountBean bean) {
+		
+		Session session= AccountDB.getSession();
+		Transaction tx = null;
+		
+		try {
+			
+			
+			tx = session.beginTransaction();
+			
+
+			session.save(bean);
+			
+			TransactionBean trans = new TransactionBean();
+			
+			trans.setAccountNumber(bean.getAccountNumber());
+			trans.setTransaction("Created An Account");
+			trans.setDate(Date.valueOf(LocalDate.now()));
+			
+			
+			session.save(trans);
+			
+			
+			
+			tx.commit();
+			
+
+			System.out.println("Account Created Successfully");
+			
+		}catch(Exception e) {
+			if(tx != null) tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+			e.printStackTrace();
+			
+		}finally {
+			
+			session.close();
+		}
+	}
+
+	public double displayBalance(int accountNumber) {
+		
+		Session session= AccountDB.getSession();
+		Transaction tx = null;
+		try {
+			
+			
+			AccountBean bean= (AccountBean)session.load(com.capg.assessment.entity.AccountBean.class,accountNumber);
+			
+			return bean.getBalance();
+			
+		}catch(Exception e) {
+			if(tx != null) tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+			e.printStackTrace();
+			
+		}finally {
+			
+			session.close();
+		}
+		
+		return 0.0;
+		
+	}
+	
+	
+}

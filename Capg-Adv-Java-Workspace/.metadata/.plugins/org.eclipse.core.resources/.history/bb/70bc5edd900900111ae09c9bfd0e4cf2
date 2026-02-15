@@ -1,0 +1,58 @@
+package com.capg.assessment.dao;
+
+import java.time.LocalDate;
+
+import org.hibernate.Transaction;
+import org.hibernate.classic.Session;
+
+import com.capg.assessment.db.AccountDB;
+import com.capg.assessment.entity.AccountBean;
+import com.capg.assessment.entity.TransactionBean;
+
+public class AccountDao {
+
+	
+	
+	public void createAccount(AccountBean bean) {
+		
+		Session session= AccountDB.getSession();
+		Transaction tx = null;
+		
+		try {
+			
+			
+			tx = session.beginTransaction();
+			
+			session.save(bean);
+			
+			TransactionBean transaction = new TransactionBean();
+			
+			transaction.setAccountNumber(bean.getAccountNumber());
+			transaction.setTransaction("Created An Account");
+			transaction.setDate(LocalDate.now());
+			
+			session.save(transaction);
+			
+			tx.commit();
+			
+			
+			
+			
+		}catch(Exception e) {
+			tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+		}finally {
+			
+			session.close();
+		}
+		
+		
+		
+		
+		
+	}
+	
+	
+}

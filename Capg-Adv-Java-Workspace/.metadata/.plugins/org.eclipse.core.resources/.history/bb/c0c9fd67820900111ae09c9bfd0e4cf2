@@ -1,0 +1,10 @@
+package com.capg.Entity;
+
+
+@Entity
+@Table(name = "Account")
+public class Account {
+	
+	
+	
+}

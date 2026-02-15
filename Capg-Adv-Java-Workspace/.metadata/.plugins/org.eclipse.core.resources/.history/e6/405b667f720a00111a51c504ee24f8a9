@@ -1,0 +1,226 @@
+package com.capg.assessment.dao;
+
+import java.time.LocalDate;
+import java.sql.Date;
+
+import org.hibernate.Transaction;
+import org.hibernate.classic.Session;
+
+import com.capg.assessment.db.AccountDB;
+import com.capg.assessment.entity.AccountBean;
+import com.capg.assessment.entity.TransactionBean;
+
+public class AccountDao {
+
+	
+	
+	public void createAccount(AccountBean bean) {
+		
+		Session session= AccountDB.getSession();
+		Transaction tx = null;
+		
+		try {
+			
+			
+			tx = session.beginTransaction();
+			
+
+			session.save(bean);
+			
+			TransactionBean trans = new TransactionBean();
+			
+			trans.setAccountNumber(bean.getAccountNumber());
+			trans.setTransaction("Created An Account");
+			trans.setDate(Date.valueOf(LocalDate.now()));
+			
+			
+			session.save(trans);
+			
+			
+			
+			tx.commit();
+			
+
+			System.out.println("Account Created Successfully");
+			
+		}catch(Exception e) {
+			if(tx != null) tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+			e.printStackTrace();
+			
+		}finally {
+			
+			session.close();
+		}
+	}
+
+	public double displayBalance(long accountNumber) {
+		
+		Session session= AccountDB.getSession();
+		try {
+			
+			
+			AccountBean bean= (AccountBean)session.load(com.capg.assessment.entity.AccountBean.class,accountNumber);
+			
+			return bean.getBalance();
+			
+		}catch(Exception e) {
+			System.out.println("Sorry For Inconvinience...");
+			
+			e.printStackTrace();
+			
+		}finally {
+			
+			session.close();
+		}
+		
+		return 0.0;
+		
+	}
+
+	public void depositMoney(long accNo, double amount) {
+		// TODO Auto-generated method stub
+		Session session= AccountDB.getSession();
+		Transaction tx=null;
+		
+		try {
+			
+			AccountBean bean= (AccountBean)session.load(com.capg.assessment.entity.AccountBean.class,accNo);
+			tx = session.beginTransaction();
+
+			bean.setBalance(bean.getBalance() + amount);
+			
+			session.save(bean);
+			
+			TransactionBean trans = new TransactionBean();
+			
+			trans.setAccountNumber(bean.getAccountNumber());
+			trans.setTransaction("Deposited "+ amount +" successfully.");
+			trans.setDate(Date.valueOf(LocalDate.now()));
+			
+			
+			session.save(trans);
+			
+			tx.commit();
+			
+			System.out.println("Amount "+ amount +" withdrawn successfully");
+
+			
+		}catch(Exception e) {
+			if(tx!=null) tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+			e.printStackTrace();
+			
+			
+		}finally {
+			session.close();
+		}
+		
+	}
+
+	public void withdrawMoney(long accNo,double amount) {
+		// TODO Auto-generated method stub
+		Session session= AccountDB.getSession();
+		Transaction tx=null;
+		
+		try {
+			
+			AccountBean bean= (AccountBean)session.load(com.capg.assessment.entity.AccountBean.class,accNo);
+			tx = session.beginTransaction();
+
+			if(bean.getBalance() >= amount) {
+				bean.setBalance(bean.getBalance()-amount);
+			}
+			
+			
+			session.save(bean);
+			
+			TransactionBean trans = new TransactionBean();
+			
+			trans.setAccountNumber(bean.getAccountNumber());
+			trans.setTransaction("Withdrawn amount "+ amount+" successfully.");
+			trans.setDate(Date.valueOf(LocalDate.now()));
+			
+			
+			session.save(trans);
+			
+			tx.commit();
+			
+			System.out.println("Amount "+amount+" Withdrawn succsessfully.");
+			
+		}catch(Exception e) {
+			if(tx!=null) tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+			e.printStackTrace();
+			
+			
+		}finally {
+			session.close();
+		}
+	}
+
+	public void fundTransfer(long accNo1, long accNo2, double amount) {
+		// TODO Auto-generated method stub
+		
+		Session session= AccountDB.getSession();
+		Transaction tx=null;
+		
+		try {
+			
+			AccountBean bean1= (AccountBean)session.load(com.capg.assessment.entity.AccountBean.class,accNo1);
+			AccountBean bean2= (AccountBean)session.load(com.capg.assessment.entity.AccountBean.class,accNo2);
+
+			tx = session.beginTransaction();
+			
+			if(bean1.getBalance() >=amount) {
+				bean1.setBalance(bean1.getBalance()-amount);
+			}
+			
+			session.save(bean1);
+			
+			bean2.setBalance(bean2.getBalance()+amount);
+			
+			session.save(bean2);
+			
+			TransactionBean trans = new TransactionBean();
+			
+			trans.setAccountNumber(bean1.getAccountNumber());
+			trans.setTransaction("Funds transferred to "+ accNo2+" successfully.");
+			trans.setDate(Date.valueOf(LocalDate.now()));
+			
+			trans.setAccountNumber(bean2.getAccountNumber());
+			trans.setTransaction("Funds recieved from "+ accNo1+" successfully.");
+			trans.setDate(Date.valueOf(LocalDate.now()));
+			
+			session.save(trans);
+			
+			tx.commit();
+			
+			System.out.println("Funds Transferred Successfully");
+			
+		}catch(Exception e) {
+			if(tx!=null) tx.rollback();
+			System.out.println("Sorry For Inconvinience...");
+			System.out.println("Transaction is Failed");
+			
+			e.printStackTrace();
+			
+			
+		}finally {
+			session.close();
+		}
+	}
+
+	public void printTransactions() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
