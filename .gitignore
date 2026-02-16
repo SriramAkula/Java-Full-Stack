@@ -11,3 +11,10 @@ bin/
 # Python cache
 __pycache__/
 *.pyc
+.metadata/
+.settings/
+.project
+.classpath
+bin/
+target/
+*.log
