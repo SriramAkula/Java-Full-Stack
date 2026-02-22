@@ -14,7 +14,7 @@ public class PreparedStatementEx1
 		  Class.forName(driver);
 			conn = DriverManager.getConnection(url,userName,password);		
 			
-			String query="insert into Employeeinfo2 values(?,?,?)";			
+		/*	String query="insert into Employeeinfo2 values(?,?,?)";			
 			//Step1 :  Get PreparedStatement 
 			PreparedStatement pstmt=conn.prepareStatement(query);
 			//Step2 :  Set parameters
@@ -31,6 +31,33 @@ public class PreparedStatementEx1
 			pstmt.setString(2,"Bhanu");
 			pstmt.setDouble(3,5450.66);
 			i=pstmt.executeUpdate(); 			
-			System.out.println("Query executed for the second time count :"+i);				
+			System.out.println("Query executed for the second time count :"+i);			
+			*/
+			
+			Statement stm=conn.createStatement();
+			ResultSet rs=stm.executeQuery("select * from employeeinfo2 where empno=555 and 1=1");
+			ResultSetMetaData rms=rs.getMetaData();
+			
+			System.out.println(rms.getColumnName(1)+" "+rms.getColumnName(2)+" "+rms.getColumnName(3));
+			while(rs.next()) {
+				 System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getDouble(3));
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 	}
 }  
