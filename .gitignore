@@ -18,3 +18,5 @@ __pycache__/
 bin/
 target/
 *.log
+Servers/
+*.jar
