@@ -1,12 +1,12 @@
 Get:
-http://localhost:9091/products
+http://localhost:9090/products
 
 Get
-http://localhost:9091/Accessories/SPRING
+http://localhost:9090/Accessories/SPRING
 
 post
 
-http://localhost:9091/products
+http://localhost:9090/products
 
  {
         "name": "Goggles",
@@ -16,4 +16,4 @@ http://localhost:9091/products
     
   Delete :
   
- http://localhost:9091/products/Electronics
+ http://localhost:9090/productsP1
