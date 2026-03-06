@@ -14,8 +14,14 @@ import com.capg.springboot.service.BooksService;
 @RestController
 public class BooksController {
 
-	@Autowired
-	BooksService booksService;
+
+	final BooksService booksService ;
+	
+	   BooksController(BooksService booksService){
+		   this.booksService=booksService;
+	   }
+	
+	
 	
 	@PostMapping("/addbook")
 	public String addBook(@RequestBody Books book) {

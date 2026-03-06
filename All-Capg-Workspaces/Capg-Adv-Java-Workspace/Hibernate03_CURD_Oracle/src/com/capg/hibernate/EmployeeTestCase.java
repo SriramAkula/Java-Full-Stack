@@ -68,7 +68,6 @@ public class EmployeeTestCase {
 			 session.update(emp);
 			 tx.commit();
 		} catch (HibernateException e) {
-			// TODO Auto-generated catch block
 			System.out.println("exception while updating the object");
 			tx.rollback();
 			e.printStackTrace();
