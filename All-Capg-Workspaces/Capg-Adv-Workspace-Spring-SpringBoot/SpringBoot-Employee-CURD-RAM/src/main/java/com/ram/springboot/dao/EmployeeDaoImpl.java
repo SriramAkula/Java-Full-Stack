@@ -34,6 +34,7 @@ public class EmployeeDaoImpl implements EmployeeDaoI {
 		return emp;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Employee> findAllEmployees() {
 		                                // Select * from Employee
