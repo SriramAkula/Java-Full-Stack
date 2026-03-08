@@ -21,3 +21,4 @@ target/
 Servers/
 *.jar
 *.zip
+*.md
