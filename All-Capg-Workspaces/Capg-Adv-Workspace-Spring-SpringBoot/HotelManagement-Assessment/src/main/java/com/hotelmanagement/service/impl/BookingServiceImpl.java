@@ -34,7 +34,10 @@ public class BookingServiceImpl implements BookingService {
 
         Room room = roomRepository.findById(id)
                 .orElseThrow(() -> new RoomNotFoundException("Room with id " + id + " not found"));
-
+        
+        if(room.getStatus().equals("Available")) {
+        	room.setStatus("Occupied");
+        }
         booking.setRoom(room);
 
         return bookingRepository.save(booking);

@@ -31,7 +31,8 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public List<Room> getAllRooms() {
     	List<Room> rooms = new ArrayList<>(); 
-    	roomRepository.findAll().forEach(r1 -> rooms.add(r1)); return rooms;
+    	roomRepository.findAll().forEach(r1 -> rooms.add(r1)); 
+    	return rooms;
     }
 
     @Override
