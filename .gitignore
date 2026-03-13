@@ -24,5 +24,5 @@ Servers/
 *.md
 *.7z
 
-.cmd
-.properties
+*.cmd
+*.properties
