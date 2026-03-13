@@ -23,3 +23,6 @@ Servers/
 *.zip
 *.md
 *.7z
+
+.cmd
+.properties
