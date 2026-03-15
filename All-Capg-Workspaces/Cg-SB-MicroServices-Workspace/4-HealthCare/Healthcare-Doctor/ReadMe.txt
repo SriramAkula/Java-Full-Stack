@@ -1,11 +1,11 @@
 BASE URL
-http://localhost:8080/doctor
+http://localhost:9002/doctor
 
 
 1️⃣ ADD DOCTOR
 Method: POST
 URL:
-http://localhost:8080/doctor/add
+http://localhost:9002/doctor/add
 
 Body (raw JSON):
 {
@@ -21,7 +21,7 @@ Body (raw JSON):
 2️⃣ GET ALL DOCTORS
 Method: GET
 URL:
-http://localhost:8080/doctor/getall
+http://localhost:9002/doctor/getall
 
 Body:
 No body required
@@ -31,7 +31,7 @@ No body required
 3️⃣ GET DOCTOR BY ID
 Method: GET
 URL:
-http://localhost:8080/doctor/get/1
+http://localhost:9002/doctor/get/1
 
 Body:
 No body required
@@ -41,7 +41,7 @@ No body required
 4️⃣ UPDATE DOCTOR
 Method: PUT
 URL:
-http://localhost:8080/doctor/update/1
+http://localhost:9002/doctor/update/1
 
 Body (raw JSON):
 {
@@ -56,7 +56,7 @@ Body (raw JSON):
 5️⃣ DELETE DOCTOR
 Method: DELETE
 URL:
-http://localhost:8080/doctor/delete/1
+http://localhost:9002/doctor/delete/1
 
 Body:
 No body required
